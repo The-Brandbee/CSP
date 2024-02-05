@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+    <%-include('header.ejs')%>
+	<div class="loader-main">
+		<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+		</div>
+<div class="inner-banner">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="<%=contactus[0].image?contactus[0].image.replace('public', '/static'):''%>" class="img-responsive"/>
+    </div>
+  </div>
+</div>
+</div>
+<div class="contact-main">
+	<div class="container">
+		<h1><%-contactus[0].name?contactus[0].name:''%></h1>
+		<div class="row">
+			<div class="col-lg-7 col-md-7 col-sm-12">
+				
+				<%-contactus[0].mapurl?contactus[0].mapurl:''%>
+				<h4><%-contactus[0].subheading?contactus[0].subheading:''%></h4>
+				<p><%-contactus[0].address?contactus[0].address:''%></p>
+				<h5><img src="/static/images/email-icon.png"/><%-contactus[0].email?contactus[0].email:''%></h5>
+				<h5><img src="/static/images/phone-icon.png"/><%-contactus[0].mobilenumber?contactus[0].mobilenumber:''%></h5>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-12">
+				<div class="contact-right">
+					<p><%-contactus[0].desc?contactus[0].desc:''%></p>
+					<div class="form-group">
+						<input type="text" class="form-control" name="" placeholder="Your Name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="" placeholder="Your E-mail">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="" placeholder="Your Phone no.">
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" rows="5" cols="10" style="height: 100px" placeholder="What are the dates and details of your project?"></textarea>
+					</div>
+					<div class="form-group">
+						<a href="#" class="btn-style"> <span class="txt"> Send </span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="attheratemetaguise">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>@metaguise</h3>
+				<p>Let's get in touch! Follow us on social media to see <br> all the latest creations</p>
+				<ul>
+					<li><img src="/static/images/attheratemetaguise-img1.jpg" class="inner-img" /></li>
+					<li><img src="/static/images/attheratemetaguise-img2.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img3.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img4.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img5.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img6.jpg" class="inner-img"/></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<%-include('footer.ejs')%>
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).delegate('.open', 'click', function(event){
+			$(this).addClass('oppenned');
+			event.stopPropagation();
+		})
+		$(document).delegate('body', 'click', function(event) {
+			$('.open').removeClass('oppenned');
+		})
+		$(document).delegate('.cls', 'click', function(event){
+			$('.open').removeClass('oppenned');
+			event.stopPropagation();
+		});
+	});
+</script>
+<script type="text/javascript">
+
+  </script>
+</body>
+</html>

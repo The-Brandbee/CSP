@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+    <%-include('header.ejs')%>
+    <%-include('form.ejs')%>
+	<div class="loader-main">
+		<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+		</div>
+<div class="inner-banner">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	  	<div class="carousel-inner">
+	    	<div class="item active">
+	      		<img src="/static/images/meettheteam-banner.jpg" class="img-responsive"/>
+	    	</div>
+	  	</div>
+	</div>
+</div>
+<div class="meetteam-main">
+	<div class="metaguise-text">
+		<p>MetaGuise</p>
+	</div>
+	<div class="container">
+		<h1>Meet The Team</h1>
+		<div class="row">
+            <%for (var i=0; i < ourteam.length; i++)
+            if(ourteam[i].checkbox!='yes') {{%>
+                <div class="col-sm-4">
+                    <img src="<%=ourteam[i].image?ourteam[i].image.replace('public', '/static'):''%>"/>
+                    <h4><%-ourteam[i].name?ourteam[i].name:''%></h4>
+                    <p><%-ourteam[i].designation?ourteam[i].designation:''%></p>
+                </div>
+            <%}}%>	
+		</div>
+	</div>
+</div>
+<div class="attheratemetaguise">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>@metaguise</h3>
+				<p>Let's get in touch! Follow us on social media to see <br> all the latest creations</p>
+				<ul>
+					<li><img src="/static/images/attheratemetaguise-img1.jpg" class="inner-img" /></li>
+					<li><img src="/static/images/attheratemetaguise-img2.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img3.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img4.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img5.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img6.jpg" class="inner-img"/></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<%-include('footer.ejs')%>
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).delegate('.open', 'click', function(event){
+			$(this).addClass('oppenned');
+			event.stopPropagation();
+		})
+		$(document).delegate('body', 'click', function(event) {
+			$('.open').removeClass('oppenned');
+		})
+		$(document).delegate('.cls', 'click', function(event){
+			$('.open').removeClass('oppenned');
+			event.stopPropagation();
+		});
+	});
+</script>
+</body>
+</html>

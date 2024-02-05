@@ -1,0 +1,47 @@
+<!-- <%for (var i=0; i < footer.length; i++) {%> -->
+<div class="footer-fixed">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-sm-12">
+				<div class="row">
+					<div class="col-lg-4 col-sm-4 footerfixed-left">
+                        <%-footer[0].menu%>
+					</div>
+					<div class="col-lg-4 col-sm-4 footerfixed-common">
+						<h3>Our range</h3>
+                        <%-footer[0].ourrange%>
+					</div>
+					<div class="col-lg-4 col-sm-4 footerfixed-common">
+						<h3>Collabration</h3>
+                        <%-footer[0].collabration%>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-12 footerfixed-right">
+				<div class="row">
+						<div class="col-lg-6 col-sm-4">
+							<p><img src="/static/images/email-icon.png"/> Email to us</p>
+							<h5><%-footer[0].email%></h5>
+						</div>
+						<div class="col-lg-6 col-sm-4">
+							<p><img src="/static/images/phone-icon.png"/> Call to us</p>
+							<h5><%-footer[0].callus%></h5>
+						</div>
+						<div class="col-lg-12 col-sm-4">
+							<p><img src="/static/images/share-icon.png"/> Connect with us</p>
+							<ul>
+								<li><a href="<%-footer[0].facebook%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="<%-footer[0].instagram%>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h6>Copyright © 2022 www.metaguise.com - All Rights Reserved.</h6>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <%}%> -->

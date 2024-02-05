@@ -1,0 +1,730 @@
+<!DOCTYPE HTML>
+<html>
+	<%-include('head.ejs')%>
+<body>
+	<div class="loader-main">
+	<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+	</div>
+<!-- 	<div class="main-banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6">
+					<div  class="open">
+						<span class="cls"></span>
+						<span>
+							<ul class="sub-menu">
+								<li>
+									<a href="#about" title="about">Home</a>
+								</li>
+								<li>
+									<a href="#skills" title="skills">Our Range</a>
+								</li>
+								<li>
+									<a href="#jobs" title="jobs">Exprience Zone</a>
+								</li>
+								<li>
+									<a href="#contact" title="contact">Collaboration</a>
+								</li>
+								<li>
+									<a href="#contact" title="contact">Believers</a>
+								</li>
+								<li>
+									<a href="#contact" title="contact">Resources</a>
+								</li>
+								<li>
+									<a href="#contact" title="contact">About</a>
+								</li>
+								<li>
+									<a href="#contact" title="contact">Conact</a>
+								</li>
+							</ul>
+						</span>
+						<span class="cls"></span>
+						<p style="margin-left: 70px; margin-top: 20px; font-size: 20px;">Menu</p>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h5>Schedule a Curated Experience </h5>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<%-include('header.ejs')%>
+
+<div class="banner">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+	
+	<%for (var i=0; i < banner.length; i++) {%>
+    <div class="item <%=i==0?"active":""%>">
+      <img src="<%=banner[i].image?banner[i].image.replace('public', '/static'):''%>" class="img-responsive"/>
+      <div class="carousel-caption">
+        <h3 data-aos="fade-up" data-aos-duration="1500"><%-banner[i].name ? banner[i].name : ''%></h3>
+      </div>
+    </div>
+<%}%>
+  </div>
+
+  <!-- Left and right controls -->
+  <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+<div id="scroll-down-animation" >
+	<a href="#createxprice">
+	  	<span class="mouse">
+	    	<span class="move"></span>
+	  	</span>
+	</a>
+  	<h2>Scroll down</h2>
+</div>
+</div>
+<div class="createxprice-main" id="createxprice">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 data-aos="fade-up" data-aos-duration="1500">Explore Metaguise Experience</h3>
+				<div id="createxprience" class="offers" data-aos="fade-up" data-aos-duration="1500">
+					<%for (var i=0; i < projectcategory.length; i++) {%>
+						<div class="item">
+							<div class="createxprice-div1">
+								<a href="/projectcategory/<%-projectcategory[i].url?projectcategory[i].url:''%>">
+									<img src="<%=projectcategory[i].image?projectcategory[i].image.replace('public', '/static'):''%>"/>
+									<p><%-projectcategory[i].name?projectcategory[i].name:''%><img src="/static/images/right-arrow.png" class="arrow"></p>
+								</a>
+							</div>
+						</div>
+					<%}%>	
+					<%for (var i=0; i < artcat.length; i++) {%>
+						<div class="item">
+							<div class="createxprice-div1">
+								<a href="/experience/<%-artcat[i].url?artcat[i].url:''%>">
+									<img src="<%=artcat[i].image?artcat[i].image.replace('public', '/static'):''%>"/>
+									<p><%-artcat[i].name?artcat[i].name:''%><img src="/static/images/right-arrow.png" class="arrow"></p>
+								</a>
+							</div>
+						</div>
+					<%}%>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="video-main" data-aos="fade-up" data-aos-duration="1500">
+	<img src="/static/images/video-bg.jpg" class="leadeship-bigvideo"/>
+	<div class="carevideo1">
+		<div class="video-div">
+			<div class="promo-video">
+				<div class="waves-block">
+					<div class="waves1 wave-1"></div>
+					<div class="waves1 wave-2"></div>
+					<div class="waves1 wave-3"></div>
+				</div>
+			</div>
+			<a href="#" data-toggle="modal" data-target="#videoModal_antara" class="video video-popup mfp-iframe" data-lity="">
+			<i class="fa fa-play"></i></a>
+		</div> 
+		<h4><%-latestinnovation[0]&&latestinnovation[0].name?latestinnovation[0].name:''%></h4>
+	</div>
+	<!-- <iframe width="100%" height="526" src="https://www.youtube.com/embed/7uULO7imitI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</div>
+<div class="ourrange" id="ourrange" data-aos="fade-up" data-aos-duration="1500">
+	<div class="">
+		<div class="">
+			<div class="col-sm-12">
+				<h3>Our Range</h3>
+				<ul class="nav nav-tabs">
+					<%for (var i=0; i < ourrange.length; i++) { %>
+						
+				  <li class="<%=i==0?"active":""%>"><a class="change-tab" data-toggle="tab" href="#facade<%=ourrange[i]._id%>"><%-ourrange[i].heading?ourrange[i].heading:""%></a></li>
+
+				  <%}%>
+
+				</ul>
+
+				<div class="tab-content">
+					
+					<%for (var i=0; i < ourrange.length; i++) { %>
+				  <div id="facade<%=ourrange[i]._id%>" class="tab-pane fade <%=i==0?"in active":""%>">
+				    <div class="row">
+				    	<div class="col-lg-offset-1 col-lg-3 col-sm-4">
+				    		<ul class="nav nav-tabs tabs-left">
+								<%for (var j=0; j < product.length; j++) {
+									if (ourrange[i]._id == product[j].category) {
+									%>
+							  <li class="related_tab <%=j==0? "active" : "" %>"><a data-toggle="tab" href="#louvers<%=j%>"><%=product[j].heading?product[j].heading:''%></a></li>
+									<%}}%>
+							</ul>
+				    	</div>
+				    	<div class="col-lg-8 col-sm-8">
+				    		<div class="tab-content">
+								<%
+								let come = 0
+								for (var j=0; j < product.length; j++) {
+									console.log(product[j].category,ourrange[i]._id)
+									console.log(product[j].category==ourrange[i]._id)
+									 if(product[j].category == ourrange[i]._id){
+									console.log(product[j].heading)
+									%>
+				  				<div id="louvers<%=j%>" class="tab-pane fade <%=j==0?"in active":""%>">
+						    		<div id="Louvers<%=j%>" class="offers">
+										<%for (var k=0; k < productimage.length; k++) {
+											if(product[j]._id   == productimage[k].productid){
+
+											%>
+										<div class="item">
+								            <div class="createxprice-div">
+												<a href="/product/<%=product[j].url%>">
+													<img src="<%=productimage[k].image?productimage[k].image.replace('public', '/static'):''%>"/>
+													<p><%-productimage[k].name?productimage[k].name:''%><img src="/static/images/right-arrow.png" class="arrow"></p>
+												</a>
+								            </div>
+								      	</div>
+								   <%}}%>
+								    </div>
+								</div>
+								<%}}%>
+
+								<!-- <div id="louvers" class="tab-pane fade">
+								    <div id="Flutes​" class="offers">
+								        <div class="item">
+								            <div class="createxprice-div">
+								            	<img src="/static/images/createexprience-img1.jpg"/>
+								            	<p><a href="#"> Flutes​ 01 <img src="/static/images/right-arrow.png" class="arrow"></a></p>
+								            </div>
+								      	</div>
+								        <div class="item">
+								            <div class="createxprice-div">
+								            	<img src="/static/images/createexprience-img2.jpg"/>
+								            	<p><a href="#"> Flutes​ 02 <img src="/static/images/right-arrow.png" class="arrow"></a></p>
+								            </div>
+								      	</div>
+								      	<div class="item">
+								            <div class="createxprice-div">
+								            	<img src="/static/images/createexprience-img3.jpg"/>
+								            	<p><a href="#"> Flutes​ 03 <img src="/static/images/right-arrow.png" class="arrow"></a></p>
+								            </div>
+								      	</div>
+								      	<div class="item">
+								            <div class="createxprice-div">
+								            	<img src="/static/images/createexprience-img1.jpg"/>
+								            	<p><a href="#"> Flutes​ 05​ <img src="/static/images/right-arrow.png" class="arrow"></a></p>
+								            </div>
+								      	</div>
+								    </div>
+								</div>
+								<div id="extrusions" class="tab-pane fade">
+								    <h3>Menu 1</h3>
+								    <p>Some content in menu 1.</p>
+								</div> -->
+							</div>
+				    	</div>
+				    </div>
+				  </div>
+				  <%}%>
+				  
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="featured-main" id="featured" data-aos="fade-up" data-aos-duration="1500">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Featured Projects</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<img src="/static/images/location-icon.png" class="location-icon" />
+				<ul class="nav nav-tabs tabs-left">
+					<%let first = 0
+					for (var i=0; i < location.length; i++) {
+						if(location[i].checkbox=="yes"){%>
+		          <li class="<%=first==0?'active':''%>"><a href="#<%=location[i].location%>" onclick="chngediv('<%=location[i].location%>')" data-toggle="tab" aria-expanded="true"><%=location[i].location%></a></li>
+					<%first = first+1
+				}}%> 
+				  <!-- <li class=""><a href="#Noida" onclick="chngediv('Noida')" data-toggle="tab" aria-expanded="false">Noida </a></li>
+		          <li class=""><a href="#Gurugram" onclick="chngediv('Gurugram')" data-toggle="tab" aria-expanded="false">Gurugram</a></li> -->
+		        </ul>
+		        
+			</div>
+			<div class="col-sm-9">
+				<div class="tab-content">
+					<%first = 0
+					for (var i=0; i < location.length; i++) {
+						for (var a=0; a < project.length; a++) {
+						console.log("reached here")
+						if(project[a].location == location[i]._id && location[i].checkbox=="yes"){ 
+							console.log("inside the section here")
+							  %>
+			        <div class="tab-pane locaplace <%=first==0?'active':''%>" id="<%=location[i].location%>">
+			          	<div class="bigimg-content">
+				          	<div class="bigimg-contentleft">
+					            <img src="<%=project[a].featuredmainimg?project[a].featuredmainimg.replace('public', '/static'):''%>">
+					            <p><%=project[a].featuredesc?project[a].featuredesc:''%></p>
+					            <a href="/project/<%=project[a].url?project[a].url:""%>">Explore Full Project</a>
+					            <a href="#" data-toggle="modal" data-target="#bookexprience" >Schedule a Curated Experience​</a>
+					        </div>
+					        <div class="bigimg-contentright">
+					        	<img src="<%=project[a].featuredsecondimg?project[a].featuredsecondimg.replace('public', '/static'):''%>"/>
+					        </div>
+				        </div>
+				    </div>
+					<%first = first+1
+				}}}%>
+
+					<%for (var b=0; b < project.length; b++) {
+						console.log("reached here")
+						if(project[b].location == "Noida" && project[b].checkbox=="yes"){ 
+							console.log("inside the section here")
+							
+							  %>
+					<div class="tab-pane locaplace" id="Noida">
+		            	<div class="bigimg-content">
+						
+				          	<div class="bigimg-contentleft">
+					            <img src="<%=project[b].featuredmainimg?project[b].featuredmainimg.replace('public', '/static'):''%>">
+					            <p><%=project[b].featuredesc?project[b].featuredesc:''%></p>
+					            <a href="/project/<%=project[b].url?project[b].url:""%>">Explore Full Project</a>
+					            <a href="#" data-toggle="modal" data-target="#bookexprience" >Schedule a curated experience​</a>
+					        </div>
+					        <div class="bigimg-contentright">
+					        	<img src="<%=project[b].featuredsecondimg?project[b].featuredsecondimg.replace('public', '/static'):''%>"/>
+					        </div>
+				        </div>
+		          	</div>
+					  <%}}%>
+
+					  <%for (var c=0; c < project.length; c++) {
+						console.log("reached here")
+						if(project[c].location == "Gurugram" && project[c].checkbox=="yes"){ 
+							console.log("inside the section here")
+							  %>
+		          	<div class="tab-pane locaplace" id="Gurugram">
+		            	<div class="bigimg-content">
+				          	<div class="bigimg-contentleft">
+					            <img src="<%=project[c].featuredmainimg?project[c].featuredmainimg.replace('public', '/static'):''%>">
+					            <p><%=project[c].featuredesc?project[c].featuredesc:''%></p>
+					            <a href="/project/<%=project[c].url?project[c].url:""%>">Explore Full Project</a>
+					            <a href="#" data-toggle="modal" data-target="#bookexprience">Schedule a curated experience​</a>
+					        </div>
+					        <div class="bigimg-contentright">
+					        	<img src="<%=project[c].featuredsecondimg?project[c].featuredsecondimg.replace('public', '/static'):''%>"/>
+					        </div>
+				        </div>
+		          	</div>
+					<%}}%>
+		        </div>
+			</div>
+		</div>
+	</div>
+	<div class="aboutus-main" data-aos="fade-up" data-aos-duration="1500">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="aboutus-divleft">
+						<img src="<%=about[0].homepageimage?about[0].homepageimage.replace('public', '/static'):''%>"/>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="aboutus-divright">
+						<h6>About Us</h6>
+						<h2><%-about[0].homepageheading?about[0].homepageheading:""%></h2>
+						<ul>
+							<%for (var i=0; i < aboutfeature.length; i++) { 
+								if(aboutfeature[i].page.includes("homepage")){%>
+								<li>
+									<img src="<%=aboutfeature[i].image?aboutfeature[i].image.replace('public', '/static'):''%>"/>
+									<p><%-aboutfeature[i].name?aboutfeature[i].name:""%></p>
+								</li>
+							<%}}%>
+						</ul>
+						<a href="/about" class="readmore">Read More <img src="/static/images/black-right-icon.png"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="team-main" id="meettheteam" data-aos="fade-up" data-aos-duration="1500">
+		<div class="metaguise-text">
+			<p>MetaGuis</p>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>Meet the Team</h2>
+				</div>
+				<%for (var i=0; i < ourteam.length; i++)
+				if(ourteam[i].checkbox=='yes') {{%>
+					<div class="col-lg-4 col-sm-6">
+						<img src="<%=ourteam[i].image?ourteam[i].image.replace('public', '/static'):''%>" class="founderimg"/>
+						<h4><%-ourteam[i].name?ourteam[i].name:''%></h4>
+						<p><%-ourteam[i].designation?ourteam[i].designation:''%></p>
+					</div>
+				<%}}%>	
+
+
+				<div class="col-lg-4 col-sm-12">
+					<div class="meettext-div">
+						<div class="circle-text">
+							<svg viewBox="0 0 100 100">
+								<path d="M 0,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+								<text>
+										<textPath xlink:href="#circle">
+												Meet the team  -  Meet the team  -
+										</textPath>
+								</text>
+							</svg>
+						</div>
+					</div>
+					<a href="/ourteam"><img src="/static/images/right-arrow.png" class="meetteamrighticon" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="map-main hidden-xs" data-aos="fade-up" data-aos-duration="1500">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-5">
+				<h3>Our Collaborations</h3>
+				<p>Mantion France - Global leaders in dynamic facade hardware and sliding, folding systems.</p>
+			</div>
+			<div class="col-sm-7">
+				<div class="map-lactionmain-div">
+					<div class="map-location">
+						<div class="pointernew">
+							
+						</div>
+						<!-- <div class="mapimgeast">
+							<img src="/static/images/yellow-icon.png"/>
+						</div>
+						<div class="mapimgwest">
+							<img src="/static/images/yellow-icon.png"/>
+						</div> -->
+					</div>
+			<!-- <div class="mapimg">
+              
+              <a class="mapimgsouth"><div class="wrapper"><div class="tooltip">
+              <img src="<%=collaborations[0]&&collaborations[0].image?collaborations[0].image.replace('public', '/static'):''%>"/> <b><%-collaborations[0]&&collaborations[0].name?collaborations[0].name:''%></b> <br><%-collaborations[0]&&collaborations[0].subheading?collaborations[0].subheading:''%><i class="fa fa-caret-right" aria-hidden="true"></i></div><img src="/static/images/yellow-icon.png" />
+              </div></a>
+              <a href="#" class="mapimgeast"><div class="wrapper"><div class="tooltip">
+				<img src="<%=collaborations[1]&&collaborations[1].image?collaborations[1]&&collaborations[1].image.replace('public', '/static'):''%>"/><b><%-collaborations[1]&&collaborations[1].name?collaborations[1].name:''%></b> <br><%-collaborations[1]&&collaborations[1].subheading?collaborations[1].subheading:''%><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+              <img src="/static/images/yellow-icon.png" /> </div></a>
+              <a href="#" class="mapimgwest">
+                <div class="wrapper"><div class="tooltip">
+				<img src="<%=collaborations[2]&&collaborations[2].image?collaborations[2].image.replace('public', '/static'):''%>"/><b><%-collaborations[2]&&collaborations[2].name?collaborations[2].name:''%></b> <br><%-collaborations[2]&&collaborations[2].subheading?collaborations[2].subheading:''%> <i class="fa fa-caret-right" aria-hidden="true"></i></div><img src="/static/images/yellow-icon.png" />
+              </div></a>
+            </div> -->
+					<div class="mapcontentdiv-fixed">
+						<img src="/static/images/pin-icon.png" class="pinimg"/>
+						<img src="/static/images/lesdock-img.jpg"/>
+						<img src="/static/images/decoral-logo.jpg" class="maplogo"/>
+						<p><img src="/static/images/location-small-icon.png"/> Italy</p>
+					</div>
+					<!-- <div class="mapcontentdiv-fixed">
+						<img src="/static/images/lesdock-img.jpg"/>
+						<img src="/static/images/decoral-logo.jpg" class="maplogo"/>
+						<p><img src="/static/images/location-small-icon.png"/> Italy</p>
+					</div>
+					<div class="mapcontentdiv-fixed">
+						<img src="/static/images/lesdock-img.jpg"/>
+						<img src="/static/images/decoral-logo.jpg" class="maplogo"/>
+						<p><img src="/static/images/location-small-icon.png"/> Italy</p>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="trustedsliderdiv hidden-xs hidden-sm" data-aos="fade-up" data-aos-duration="1500">
+
+	<%for (var i=0; i < ourbusinesses.length; i++) {%>
+
+    <img src="<%=ourbusinesses[i].image?ourbusinesses[i].image.replace('public', '/static'):''%>" class="imge<%=i+1%>" />
+
+<%}%>
+
+
+    <div class="trustmainhead">
+      <h3>Others Businesses</h3>
+    </div>
+    <div class="trustedsliderbox">
+
+		<%for (var i=0; i < ourbusinesses.length; i++) {%>
+
+      <div class="trustedsliderdivone" id="imgediv<%=i+1%>">
+        <div class="trustedsliderdivonebox main">
+          	<div class="sub">
+	          	<h3><%-ourbusinesses[i].name?ourbusinesses[i].name:''%></h3>
+	          	<h5><%-ourbusinesses[i].subheading?ourbusinesses[i].subheading:''%></h5>
+	        	<p><%-ourbusinesses[i].desc?ourbusinesses[i].desc:''%></p>
+        		<img src="/static/images/white-right-arrow.png"/>
+    		</div>
+        </div>
+      </div>
+
+	  <%}%>
+
+    </div>
+  </div>
+  <div class="trustedsliderdiv visible-xs visible-sm">
+	<div class="container">
+		<div class="trustmainhead">
+			<h3>Others Businesses</h3>
+		  </div>
+		<div id="trustedsliderdiv" class="offers">
+			<div class="item">
+				<div class="trustedsliderdiv-contant">
+					<img src="/static/images/trust-slider-mob-img1.jpg"/>
+					<div class="contant">
+			          	<h3>Metaland</h3>
+			          	<h5>Testing & Certification Lab</h5>
+			        	<p>Trustworthy, systematic, and secure distribution of medical equipment and drugs across India. </p>
+		        		<img src="/static/images/right-arrow.png" class="trustrightartrrow" />
+		    		</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="trustedsliderdiv-contant">
+					<img src="/static/images/trust-slider-mob-img1.jpg"/>
+					<div class="contant">
+			          	<h3>Metaland</h3>
+			          	<h5>Testing & Certification Lab</h5>
+			        	<p>Trustworthy, systematic, and secure distribution of medical equipment and drugs across India. </p>
+		        		<img src="/static/images/right-arrow.png" class="trustrightartrrow" />
+		    		</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="trustedsliderdiv-contant">
+					<img src="/static/images/trust-slider-mob-img1.jpg"/>
+					<div class="contant">
+			          	<h3>Metaland</h3>
+			          	<h5>Testing & Certification Lab</h5>
+			        	<p>Trustworthy, systematic, and secure distribution of medical equipment and drugs across India. </p>
+		        		<img src="/static/images/right-arrow.png" class="trustrightartrrow" />
+		    		</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="trustedsliderdiv-contant">
+					<img src="/static/images/trust-slider-mob-img1.jpg"/>
+					<div class="contant">
+			          	<h3>Metaland</h3>
+			          	<h5>Testing & Certification Lab</h5>
+			        	<p>Trustworthy, systematic, and secure distribution of medical equipment and drugs across India. </p>
+		        		<img src="/static/images/right-arrow.png" class="trustrightartrrow" />
+		    		</div>
+				</div>
+			</div>				        
+			<div class="item">
+				<div class="trustedsliderdiv-contant">
+					<img src="/static/images/trust-slider-mob-img1.jpg"/>
+					<div class="contant">
+			          	<h3>Metaland</h3>
+			          	<h5>Testing & Certification Lab</h5>
+			        	<p>Trustworthy, systematic, and secure distribution of medical equipment and drugs across India. </p>
+		        		<img src="/static/images/right-arrow.png" class="trustrightartrrow" />
+		    		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="blog-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="blog-mainleft">
+					<h3>Latest Blog</h3>
+					<img src="<%=blogs[0]&&blogs[0].image1?blogs[0].image1.replace('public', '/static'):''%>"/>
+					<h5><%-blogs[0]&&blogs[0].title?blogs[0].title:''%></h5>
+					<p><%-blogs[0]&&blogs[0].date?blogs[0].date:''%></p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="blog-mainright">
+					<h3>News Media</h3>
+					<ul>
+						<li>
+							<a href="#">
+							<p>Nam quis arcu a nisl iaculis vestibulum vel sed mauris.</p>
+							<span>20 April 2022</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+							<p>Nam quis arcu a nisl iaculis vestibulum vel sed mauris.</p>
+							<span>20 April 2022</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+							<p>Nam quis arcu a nisl iaculis vestibulum vel sed mauris.</p>
+							<span>20 April 2022</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+							<p>Nam quis arcu a nisl iaculis vestibulum vel sed mauris.</p>
+							<span>20 April 2022</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+<div class="ourbelivers-main" id="testimonialnew" data-aos="fade-up" data-aos-duration="1500">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Our Believers​</h3>
+				<div id="Believers" class="offers1">
+
+					<%for (var i=0; i < testimonial.length; i++) {%>
+			        <div class="item">
+			            <div class="ourbelivers-div">
+			            	<img src="<%=testimonial[i].image?testimonial[i].image.replace('public', '/static'):''%>"/>
+			            	<div class="ourbelivers-content">
+			            		<p><%-testimonial[i].desc?testimonial[i].desc:''%></p>
+			            		<div class="ourbelivers-contentnew">
+			            			<img src="<%=testimonial[i].image1?testimonial[i].image1.replace('public', '/static'):''%>"/>
+			            			<h4><%-testimonial[i].name?testimonial[i].name:''%></h4>
+			            			<h5><i class="fa fa-map-marker" aria-hidden="true"></i><%-testimonial[i].location?testimonial[i].location:''%><a href="<%-testimonial[i].url?testimonial[i].url:''%>">View Project</a></h5>
+			            		</div>
+			            	</div>
+			            </div>
+			      	</div>
+					<%}%>
+
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7">
+				<div class="footer-left">
+					<div class="row">
+						<div class="col-sm-4">
+							<p><img src="/static/images/email-icon.png"/> Email to us</p>
+							<h5><%-footer[0]&&footer[0].email?footer[0].email:''%></h5>
+						</div>
+						<div class="col-sm-4">
+							<p><img src="/static/images/phone-icon.png"/> Call to us</p>
+							<h5><%-footer[0]&&footer[0].callus?footer[0].callus:''%></h5>
+						</div>
+						<div class="col-sm-4">
+							<p><img src="/static/images/share-icon.png"/> Connect with us</p>
+							<ul>
+								<li><a href="<%-footer[0]&&footer[0].facebook?footer[0].facebook:''%>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="<%-footer[0]&&footer[0].instagram?footer[0].instagram:''%>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h6>Sign up to hear From us.</h6>
+							<div class="subcribediv">
+								<input type="text" class="form-control" name="" placeholder="Enter your Email">
+								<a href="#"><img src="/static/images/right-arrow.png" class="right-arrow" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-offset-1 col-lg-4">
+				<div class="letdiscuss-div">
+					<h3>Let’s Discuss Over the Call</h3>
+					<input type="text" class="form-control" name="" placeholder="Your Name">
+					<input type="text" class="form-control" name="" placeholder="Your Phone Number">
+					<a href="#">Get In Touch</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="attheratemetaguise">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>@metaguise</h3>
+				<p>Let's get in touch! Follow us on social media to see <br> all the latest creations</p>
+				<ul>
+					<li><img src="/static/images/attheratemetaguise-img1.jpg" class="inner-img" /></li>
+					<li><img src="/static/images/attheratemetaguise-img2.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img3.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img4.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img5.jpg" class="inner-img"/></li>
+					<li><img src="/static/images/attheratemetaguise-img6.jpg" class="inner-img"/></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<%-include('footer.ejs')%>
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).delegate('.open', 'click', function(event){
+			$(this).addClass('oppenned');
+			event.stopPropagation();
+		})
+		$(document).delegate('body', 'click', function(event) {
+			$('.open').removeClass('oppenned');
+		})
+		$(document).delegate('.cls', 'click', function(event){
+			$('.open').removeClass('oppenned');
+			event.stopPropagation();
+		});
+	});
+</script>
+<script type="text/javascript">
+
+  </script>
+  <script>
+	function chngediv(location){
+		$('.locaplace').removeClass('active')
+		$(`#${location}`).addClass('active')
+	}
+
+	$(".change-tab").on('click', function() {
+		
+		let related_div = $(this).attr('href');
+
+		$(''+ related_div).find('.related_tab').eq(0).addClass('active');
+		// $(''+ related_div).find('.related_tab').eq(0).click();
+		related_div = $(''+ related_div).find('.related_tab').eq(0).find("a").attr("href");
+
+		$(''+related_div).addClass("active in");
+	});
+	</script>
+	
+</body>
+</html>

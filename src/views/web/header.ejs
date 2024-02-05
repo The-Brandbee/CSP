@@ -1,0 +1,62 @@
+    <!-- Modal -->
+	<div class="modal fade" id="bookexprience" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<h3>Loved your Metaguise experience?</h3>
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <img src="/static/images/cross-icon.png"/>
+			</button>
+		</div>
+			   <div class="modal-body">
+				<h2>Book your Curated Experience</h2>
+					<div class="from-group">
+						<input type="text" class="form-control" name="" placeholder="Your Name">
+					</div>
+					<div class="from-group">
+						<input type="text" class="form-control" name="" placeholder="Your Phone Number">
+						<a href="#">Send OTP</a>
+					</div>
+					<div class="from-group">
+						<input type="text" class="form-control" name="" placeholder="Enter OTP">
+						<p>00:59</p>
+					</div>
+					<div class="from-group">
+						<input type="text" class="form-control" name="" placeholder="Select a Time Slot">
+						<img src="/static/images/calender-icon.png"/>
+					</div>
+					<div class="from-group">
+						<div class="choose_file">
+							<span>Upload your reference </span>
+							<input name="Select File" type="file" />
+							<img src="/static/images/upload-icon.png"/>
+						</div>
+					</div>
+					<div class="from-group">
+						<button type="submit" class="getintouchbtn">Get In Touch</button>
+					</div>
+				</div>
+			</div>
+		  </div>
+	</div>
+<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<%-sidenav[0]&&sidenav[0].nav?sidenav[0].nav:''%>
+</div>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-3 col-xs-4">
+                <p onclick="openNav()"><img src="/static/images/toggle-icon.png" class="toggle"><span>Menu</span></p>
+            </div>
+            <div class="col-lg-4 col-sm-3 col-xs-4 text-center">
+                <a href="/"><img src="/static/images/logo.png" class="logo" /></a>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-xs-4" style="text-align: right;">
+                <p class="hidden-xs"><a href="#" data-toggle="modal" data-target="#bookexprience"> Schedule a Curated Experience <img src="/static/images/white-right-arrow.png"/></a></p>
+                <a href="#" class="visible-xs" data-toggle="modal" data-target="#bookexprience"> <img src="/static/images/contact-form.png" class="form" /></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+	<%-include('form.ejs')%>
+	<div class="loader-main">
+		<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+		</div>
+<div class="header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-3 col-xs-2">
+				<p><a onclick="history.back()"><img src="/static/images/black-left-icon.png"> <span> Back </span></a></p>
+			</div>
+			<div class="col-lg-4 col-md-5 col-sm-4 col-xs-8 text-center">
+				
+			</div>
+			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-2" style="text-align: right;">
+				<p class="hidden-xs"><a href="#" data-toggle="modal" data-target="#bookexprience"> Schedule a Curated Experience <img src="/static/images/right-arrow.png"/></a></p>
+                <a href="#" class="visible-xs" data-toggle="modal" data-target="#bookexprience"> <img src="/static/images/contact-black-form.png" class="form" /></a>
+			</div>
+	</div>
+	</div>
+</div>
+<div class="exprience-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="<%=project.featuredmainimg?project.featuredmainimg.replace('public', '/static'):''%>"/>
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-6">
+						<img src="<%=project.featuredsecondimg?project.featuredsecondimg.replace('public', '/static'):''%>"/>
+					</div>
+					<div class="col-sm-6">
+						<img src="<%=project.threesixtyimage?project.threesixtyimage.replace('public', '/static'):''%>"/>
+					</div>
+					<div class="col-sm-12">
+						<p class="shortdesc"><%=project.shortdescription%></p>
+						<p class="desc"><%=project.description%></p>
+						<a class="more" onclick="KnowMorw()">Know More</a>
+						<a class="less" onclick="KnowLess()">Know Less</a>
+						<a onclick="history.back()">Explore more</a>
+					</div>
+					<div class="col-sm-12">
+						<h4>Projects that used the form</h4>
+						<div id="expriencesmall" class="offers">
+					        
+					<%for (var i=0; i < project.project_list.length; i++) {
+						for (var j=0; j < projects.length; j++) {
+							console.log({allproject:projects[j]._id})
+							console.log({usedproject:project.project_list[i]})
+							if(projects[j]._id == project.project_list[i]){
+								%>
+							<div class="item">
+					            <div class="createxprice-div">
+					            	<a href="/project/<%=projects[j].url?projects[j].url:''%>">
+						            	<img src="<%=projects[j].image?projects[j].image.replace('public', '/static'):''%>"/>
+					            	</a>
+					            </div>
+					      	</div>
+					        <%}}}%>
+
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 buttondiv">
+				<%if(project.pdf){%>
+				<a href="<%=project.pdf?project.pdf.replace('public', '/static'):''%>" target="_blank" class="downlaodbtn">Download Brochure</a>
+			<%}%>
+				<a href="#" data-toggle="modal" data-target="#bookexprience" class="schedulebtn">Schedule a Curated Experience​</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(".shortdesc").show()
+	$(".desc").hide()
+	$(".more").show()
+	$(".less").hide()
+	function KnowMorw(){
+	$(".shortdesc").hide()
+	$(".desc").show()
+	$(".more").hide()
+	$(".less").show()
+	}
+	function KnowLess(){
+	$(".shortdesc").show()
+	$(".desc").hide()
+	$(".more").show()
+	$(".less").hide()
+	}
+	</script>
+</body>
+</html>

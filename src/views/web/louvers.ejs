@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+	<%-include('form.ejs')%>
+	<div class="loader-main">
+		<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+		</div>
+<div class="header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-sm-3 col-xs-2">
+				<p><a onclick="history.back()"><img src="/static/images/black-left-icon.png"> <span> Back </span></a></p>
+			</div>
+			<div class="col-lg-6 col-md-5 col-sm-4 col-xs-7 text-center">
+				
+			</div>
+			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-2" style="text-align: right;">
+				<p class="hidden-xs"><a href="#" data-toggle="modal" data-target="#bookexprience"> Schedule a Curated Experience <img src="/static/images/right-arrow.png"/></a></p>
+                <a href="#" class="visible-xs" data-toggle="modal" data-target="#bookexprience"> <img src="/static/images/contact-black-form.png" class="form" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="productdiv-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="<%=products.image?products.image.replace('public', '/static'):''%>"/>
+			</div>
+			<div class="col-sm-6">
+				<div style="padding: 0px 20px;">
+				<h1><%=products.heading%></h1>
+				<p><%=products.description%></p>
+				<h4>Types of <%=products.heading%></h4>
+						<div id="louverssliderone" class="offers">
+							<%for (var k=0; k < productimage.length; k++) {
+								if(products._id   == productimage[k].productid){
+								%>
+							<div class="item">
+					            <div class="createxprice-div">
+					            	<a href="#">
+						            	<img src="<%=productimage[k].image?productimage[k].image.replace('public', '/static'):''%>"/>
+					            	</a>
+					            </div>
+					      	</div>
+					       <%}}%>
+					    </div>
+					</div>
+				</div>
+				</div>
+				<div class="row">
+					<div class="multisliderdiv">
+					<div class="col-sm-6">						
+						<div style="padding: 0px 20px;"></div>
+						<h3>Projects that use this product</h3>
+
+						<div id="louversslidertwo" class="offers">
+					        
+							<%for (var k=0; k < product.length; k++) {
+								for (var i=0; i < project.length;  i++) {
+			console.log(project[i].project_use)
+			console.log(product[k]._id)
+			let x = project[i]&&project[i].project_use?project[i].project_use.includes(product[k]._id):""
+			console.log(x)
+			if(x){%>
+							<div class="item">
+					            <div class="createxprice-div">
+					            	<a href="/project/<%=project[i].url?project[i].url:''%>">
+						            	<img src="<%=project[i].image?project[i].image.replace('public', '/static'):''%>"/>
+					            	</a>
+					            </div>
+					      	</div>
+					       <%}}}%>
+					    </div>
+					</div>
+					</div>
+					<div class="col-sm-6">
+						<div style="padding: 0px 20px;">
+						<h3>People who saw this product. also viewed </h3>
+						<div id="louverssliderthree" class="offers">
+					        
+							<%for (var k=0; k < product.length; k++) {%>
+							<div class="item">
+					            <div class="createxprice-div">
+					            	<a href="/product/<%=product[k].url?product[k].url:''%>">
+						            	<img src="<%=product[k].image?product[k].image.replace('public', '/static'):''%>"/>
+					            	</a>
+					            </div>
+					      	</div>
+					       <%}%>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 buttondiv">
+				<%if(products.pdf){%>
+
+					<a href="<%=products.pdf?project.pdf.replace('public', '/static'):''%>" class="downlaodbtn">Download Brochure</a>
+					<%}%>
+					<a href="#" data-toggle="modal" data-target="#bookexprience" class="schedulebtn">Schedule a Curated Experience​</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

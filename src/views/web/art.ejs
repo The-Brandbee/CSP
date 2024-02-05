@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+	<%-include('form.ejs')%>
+	<div class="loader-main">
+		<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+		</div>
+	<!-- Modal -->
+<div class="modal fade" id="commonproductmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <img src="/static/images/cross-icon.png"/>
+        </button>
+    </div>
+	   	<div class="modal-body">
+	        <div id="exTab1">	
+				<ul  class="nav nav-pills">
+					<li class="active">
+				        <a  href="#1a" data-toggle="tab"> 
+				        	<img src="/static/images/select-pattren-img.png"/><p> Select the Pattern </p></a>
+					</li>
+					<li>
+						<a href="#2a" data-toggle="tab"> <img src="/static/images/select-finish-img.png"/> 
+						<p>Select the Finish</p></a>
+					</li>
+				</ul>
+					<div class="tab-content clearfix">
+						<div class="tab-pane active" id="1a">
+					        <div id="selectpatter" class="offers2">
+						        <div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img1.jpg"/>
+						            	</a>
+						            </div>
+						      	</div>
+						        <div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img2.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						      	<div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img3.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						      	<div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img4.jpg"/>
+						            	</a>
+						            </div>
+						      	</div>
+						        <div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img1.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						      	<div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img2.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						    </div>
+						    <div class="from-group">
+					        	<div class="choose_file">
+					        		<img src="/static/images/upload-white-icon.png"/>
+						        	<span>Upload your reference </span>
+						        	<input name="Select File" type="file" />
+						    	</div>
+						    	<h6> <a href="#" > Next <img src="/static/images/black-right-icon.png"/> </a></h6>
+					        </div>
+						</div>
+						<div class="tab-pane" id="2a">
+					        <div id="selectfinish" class="offers2">
+						        <div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img1.jpg"/>
+						            	</a>
+						            </div>
+						      	</div>
+						        <div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img2.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						      	<div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img3.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						      	<div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img4.jpg"/>
+						            	</a>
+						            </div>
+						      	</div>
+						        <div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img1.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						      	<div class="item">
+						            <div class="createxprice-div">
+						            	<a href="#">
+							            	<img src="/static/images/selectpatter-img2.jpg"/>
+							            </a>
+						            </div>
+						      	</div>
+						    </div>
+						    <div class="from-group">
+					        	<div class="choose_file">
+					        		<img src="/static/images/upload-white-icon.png"/>
+						        	<span>Upload your reference </span>
+						        	<input name="Select File" type="file" />
+						    	</div>
+						    	<h6> <a href="#" data-toggle="modal" data-target="#commonproductmodal"> Next <img src="/static/images/black-right-icon.png"/> </a></h6>
+					        </div>
+						</div>
+					</div>
+				</div>
+		    </div>
+	    </div>
+  	</div>
+</div>
+<div class="header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<p><a onclick="history.back()"><img src="/static/images/black-left-icon.png"> Back </a></p>
+			</div>
+			<div class="col-sm-4 text-center">
+				<h2><%=artdetails.name%></h2>
+			</div>
+			<div class="col-sm-4" style="text-align: right;">
+				<p><a href="#"data-toggle="modal" data-target="#bookexprience"> Schedule a Curated Experience​ <img src="/static/images/black-right-icon.png"/></a></p>
+			</div>
+	</div>
+	</div>
+</div>
+<div class="allinoneproduct-main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="<%=artdetails.internalimage?artdetails.internalimage.replace('public', '/static'):''%>"/>
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-12">
+						<h4><%=artdetails.subheading%></h4>
+						<p><%=artdetails.desc%></p>
+						<a href="#" class="btn-style" data-toggle="modal" data-target="#commonproductmodal"><span class="txt"> Personalize it </span></a>
+					</div>
+					<div class="col-sm-12">
+						<h4>Projects that used the form</h4>
+						<div id="expriencesmall" class="offers">
+							<%for (var k=0; k < project.length; k++) {%>
+								<div class="item">
+									<div class="createxprice-div">
+										<a href="/project/<%=project[k].url?project[k].url:''%>">
+											<img src="<%=project[k].image?project[k].image.replace('public', '/static'):''%>"/>
+										</a>
+									</div>
+								  </div>
+							   <%}%>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

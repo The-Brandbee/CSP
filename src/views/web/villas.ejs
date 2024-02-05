@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+	<%-include('form.ejs')%>
+	<div class="loader-main">
+		<div class="lds-ellipsis"><div></div><div></div><div></div></div>
+		</div>
+<div class="header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-sm-3 col-xs-2">
+				<p><a onclick="history.back()"><img src="/static/images/black-left-icon.png"> <span> Back </span></a></p>
+			</div>
+			<div class="col-lg-6 col-md-5 col-sm-4 col-xs-8 text-center">
+				<h2><%=projectpropertydetails.name%></h2>
+			</div>
+			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-2" style="text-align: right;">
+				<p class="hidden-xs"><a href="#" data-toggle="modal" data-target="#bookexprience"> Schedule a Curated Experience <img src="/static/images/right-arrow.png"/></a></p>
+                <a href="#" class="visible-xs" data-toggle="modal" data-target="#bookexprience"> <img src="/static/images/contact-black-form.png" class="form" /></a>
+			</div>
+	</div>
+	</div>
+</div>
+<div class="createxprice-main1">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-offset-1 col-sm-3">
+				<h4>Choose the  <br> type of property</h4>
+				   	<ul class="nav nav-tabs tabs-left">
+						   
+						<%for (var i=0; i < projectpropertydetailsall.length; i++) { %>
+							<li class="<%=projectpropertydetailsall[i].name==projectpropertydetails.name?'active':''%>"><a data-toggle="tab" href="#sliderss<%=i%>"><%=projectpropertydetailsall[i].name%></a></li>
+							<%}%>
+						<!-- <li class="active"><a data-toggle="tab" href="#Builder">Builder Floor</a></li>
+						<li><a data-toggle="tab" href="#Hospitality">Hospitality</a></li>
+						<li><a data-toggle="tab" href="#Commercial">Commercial Buildings </a></li>
+						<li><a data-toggle="tab" href="#Villas">Villas </a></li>
+						<li><a data-toggle="tab" href="#Farm">Farm Houses​ </a></li> -->
+					</ul>
+				</div>
+				<div class="col-sm-8">
+					<div class="tab-content">
+						<%for (var i=0; i < projectpropertydetailsall.length; i++) { %>
+				  		<div id="sliderss<%=i%>" class="tab-pane offers1 fade <%=projectpropertydetailsall[i].name==projectpropertydetails.name?'in active':''%>">
+						    <div id="slidersss<%=i%>" class="offers">
+								<%for (var j=0; j < project.length; j++) { 
+									let x = (project[j].project_property?project[j].project_property:[]).filter((item,index)=>projectpropertydetailsall[i]._id == item)
+									if(x.length){%>
+								<div class="item">
+								    <div class="createxprice-div">
+								        <a href="/project/<%-project[j].url?project[j].url:''%>">
+									        <img src='<%=project[j].image?project[j].image.replace("public/", "/static/"):""%>'/>
+									        <p><%=project[j].name%><img src="/static/images/right-arrow.png" class="arrow"></p>
+								        </a>
+								    </div>
+								</div>
+									<%}}%>
+							</div>
+						</div>
+						<%}%>
+					</div>
+						
+				</div>
+			</div>
+
+
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+
+<body>
+    <%-include('header.ejs')%>
+
+<div class="inner-banner">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol> -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="/static/images/banner-img1.jpg" class="img-responsive"/>
+    </div>
+  </div>
+</div>
+</div>
+<div class="featured-main">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-offset-2 col-sm-10">
+				<h1>Featured Projects</h1>
+				<p>Our products, developed in aluminium and its alloys</p>
+			</div>
+			<div class="col-lg-offset-2 col-lg-2 col-sm-12">
+				<img src="/static/images/location-icon.png"/>
+				<ul class="nav nav-tabs tabs-left">
+					<%for (var a=0; a < location.length; a++) {%>
+					<li class="<%=a==0?'active':''%>"><a data-toggle="tab" href="#<%=location[a].location%><%=a%>"><%=location[a].location%></a></li>
+					<%}%>
+					<!-- <li><a data-toggle="tab" href="#location2">Noida</a></li>
+					<li><a data-toggle="tab" href="#location3">Gurgaon </a></li>
+					<li><a data-toggle="tab" href="#location4">Fridabad </a></li>
+					<li><a data-toggle="tab" href="#location5">Chandigarh </a></li>
+					<li><a data-toggle="tab" href="#location6">Jaipur </a></li> -->
+				</ul>
+			</div>
+			<div class="col-lg-8 col-sm-12">
+				<div class="tab-content">
+					<%let first = 0
+					for (var a=0; a < location.length; a++) {%>
+				  		<div id="<%=location[a].location%><%=a%>" class="tab-pane fade <%=first==0?'in active':''%>">
+						    <div id="Builderslider<%=a%>" class="offers">
+						<%for (var i=0; i < project.length; i++) {
+						if(project[i].location == location[a]._id){ %>
+								<div class="item">
+								    <div class="createxprice-div">
+								        <a href="#">
+									        <img src="<%=project[i].featuredmainimg?project[i].featuredmainimg.replace('public', '/static'):''%>"/>
+									        <p><%=project[i].name%><img src="/static/images/right-arrow.png" class="arrow"></p>
+								        </a>
+								    </div>
+								</div>
+								<%}}%>
+							</div>
+						</div>
+						<%first = first+1}%>
+					</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<%-include('footer.ejs')%>
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).delegate('.open', 'click', function(event){
+			$(this).addClass('oppenned');
+			event.stopPropagation();
+		})
+		$(document).delegate('body', 'click', function(event) {
+			$('.open').removeClass('oppenned');
+		})
+		$(document).delegate('.cls', 'click', function(event){
+			$('.open').removeClass('oppenned');
+			event.stopPropagation();
+		});
+	});
+</script>
+<script type="text/javascript">
+
+  </script>
+</body>
+</html>

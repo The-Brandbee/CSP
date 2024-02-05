@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+    <%-include('head.ejs')%>
+<body>
+    <%-include('form.ejs')%>
+    <div class="loader-main">
+        <div class="lds-ellipsis"><div></div><div></div><div></div></div>
+        </div>
+<div class="header1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-3 col-xs-3">
+				<p><a onclick="history.back()"><img src="/static/images/black-left-icon.png"> Back </a></p>
+			</div>
+			<div class="col-lg-4 col-sm-4 col-xs-4 text-center">
+				<h2>Art</h2>
+			</div>
+			<div class="col-lg-4 col-sm-5 col-xs-5" style="text-align: right;">
+				<p><a href="#"data-toggle="modal" data-target="#bookexprience"> Schedule a Curated Experience​ <img src="/static/images/black-right-icon.png"/></a></p>
+			</div>
+	</div>
+	</div>
+</div>
+<div class="createxprice-main1">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Choose the type of property</h3>
+				<div id="artfirstslider" class="offers">
+					
+					<%for (var i=0; i < artdetails.length; i++) {
+						if(artdetails[i].category == artcat._id){%>
+					<div class="item">
+			            <div class="createxprice-div">
+			            	<a href="/expdetails/<%=artdetails[i].url%>">
+				            	<img src="<%=artdetails[i].image?artdetails[i].image.replace('public', '/static'):''%>"/>
+				            	<p> <%=artdetails[i].name%> <img src="/static/images/right-arrow.png" class="arrow"></p>
+			            	</a>
+			            </div>
+			      	</div>
+			        <%}}%>
+
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.12.0.min.js"></script> 
+<script src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+<script src="/static/js/aos.js"></script> 
+<script type="text/javascript" src="/static/js/custom.js"></script> 
+</body>
+</html>

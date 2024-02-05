@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('head.ejs') %>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
+    <div class="page-wrapper">
+        <!-- start header -->
+        <%- include ('header.ejs') %>
+        <!-- end header -->
+
+        <!-- start page container -->
+        <div class="page-container">
+
+            <!-- start sidebar menu -->
+            <%- include ('side-nav.ejs') %>
+            <!-- end sidebar menu -->
+
+            <!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Add ourteam</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="/cms/dashboard">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Add ourteam</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- start Main content -->
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <div class="card-head">
+                                        <header>Basic Information</header>
+                                    </div>
+                                    <div class="card-body row">
+                                        
+                                        <div class="col-lg-3 p-t-20">
+                                           <label>Name</label>
+                                           <input type="text" name="_id" value="<%=ourteam._id%>" style="display:none;">
+                                            <input type="text" name="name" value="<%=ourteam.name%>" placeholder="Name" class="form-control input-height"required/>
+                                        </div>
+
+                                        <div class="col-lg-3 p-t-20">
+                                            <label>Designation</label>
+                                             <input type="text" name="designation" value="<%=ourteam.designation%>" placeholder="Designation" class="form-control input-height" required/>
+                                         </div>
+
+                                         <div class="col-lg-3 p-t-20">
+                                            <label>Show on Homepage</label>
+                                            <input type="checkbox" name="checkbox" class="form-control"value="yes" <%=ourteam.checkbox=='yes'?"checked":""%> style="width: 15px;height:15px;margin-top:10px;">
+                                         </div>
+
+
+                                        <div class="col-lg-3 p-t-20">
+                                                <label>Image</label>
+                                                <input type="file" name="image" class="form-control input-height" accept="image/*" />
+                                                <span class="error error_file" style="display: none;" id="error_file">File size too large</span>
+                                                <%if(ourteam.image){%>
+                                                    <img width="40" src="<%=ourteam.image.replace('public', '/static')%>">
+                                                    <%}%>
+                                                    <label>Recommended size is 369 x 487 px</label>
+                                        </div>
+                                        <div class="col-lg-3 p-t-20">
+                                                <label>Mobile Image (Optional)</label>
+                                                <input type="file" name="mobileimage" class="form-control input-height" accept="image/*" />
+                                                <span class="error error_file" style="display: none;" id="error_file">File size too large</span>
+                                                <%if(ourteam.mobileimage){%>
+                                                    <img width="40" src="<%=ourteam.mobileimage.replace('public', '/static')%>">
+                                                    <%}%>
+                                        </div>
+                                        <!-- <div class="col-lg-3 p-t-20">
+                                            <label>priority</label>
+                                                <input type="number" name="priority" value="<%=ourteam.priority%>" placeholder="priority" class="form-control input-height"/>
+                                        </div> -->
+                                       
+                                       <!-- <div class="col-lg-12 p-t-20">
+                                        <label> Description</label>
+                                        <textarea id="description" name="description" class="summernote form-control input-height" placeholder="description" rows="7"><%=ourteam.description%></textarea>
+                                     </div> -->
+                                        <div class="col-lg-12 p-t-20 text-center">
+                                            <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- end Main COntent -->
+                </div>
+            </div>
+            <!-- end page content -->
+
+        </div>
+        <!-- end page container -->
+
+        <!-- start footer -->
+        <%- include ('footer.ejs') %>
+        <!-- end footer -->
+    </div>
+    <script src="/static/cms/assets/bundles/jquery/jquery.min.js"></script>
+    <script src="/static/cms/assets/bundles/popper/popper.js"></script>
+    <script src="/static/cms/assets/bundles/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/cms/assets/bundles/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="/static/cms/assets/bundles/jquery-blockUI/jquery.blockui.min.js"></script>
+    <script src="/static/cms/assets/bundles/jquery.slimscroll/jquery.slimscroll.js"></script>
+    <!-- Common js-->
+    <script src="/static/cms/assets/app.js"></script>
+    <script src="/static/cms/assets/layout.js"></script>
+    <script src="/static/cms/assets/theme-color.js"></script>
+    <!-- Material -->
+    <script src="/static/cms/assets/bundles/material/material.min.js"></script>
+    <!-- Sweet Alert -->
+    <script src="/static/cms/assets/bundles/sweet-alert/sweetalert.min.js"></script>
+    <script src="/static/cms/assets/bundles/summernote/summernote.js"></script>
+    <script type="text/javascript">
+       $('.summernote').summernote({
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture']],
+                ['view', ['codeview']],
+            ],
+            placeholder: 'Enter Page Description',
+            height: 200
+        });
+        <%if(response =='success') { %>
+            swal("Success!", "<%=msg%>", "success");
+        <%} else if(response =='error') {%>
+            swal("Error!", "<%=msg%>", "error");
+        <%}%>
+      </script>
+        <script>
+            function check_image_filesize(ele) {
+                if(ele.files[0].size > (100 * 1024))
+                {
+                    document.getElementById("error_file").style.display="block";
+                    ele.value = "";
+                }
+            }
+            function check_image_filesize1(ele) {
+                if(ele.files[0].size > (100 * 1024))
+                {
+                    document.getElementById("error_file1").style.display="block";
+                    ele.value = "";
+                }
+            }
+            function check_image_filesize2(ele) {
+                if(ele.files[0].size > (100 * 1024))
+                {
+                    document.getElementById("error_file2").style.display="block";
+                    ele.value = "";
+                }
+            }
+            function check_image_filesize3(ele) {
+                if(ele.files[0].size > (100 * 1024))
+                {
+                    document.getElementById("error_file3").style.display="block";
+                    ele.value = "";
+                }
+            }
+            </script>
+</body>
+
+</html>
